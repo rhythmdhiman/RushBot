@@ -81,6 +81,12 @@ async def upcomingContest(ctx):
     await contestLongDisplayer(ctx, "codeforces.com", "CodeForces", "codeforces_com")
     await contestLongDisplayer(ctx, "codechef.com", "CodeChef", "codechef_com")
 
+# Proper intents enable kar
+intents = discord.Intents.default()
+intents.message_content = True  # Yeh zaroori hai agar bot messages read karega
+
+bot = commands.Bot(command_prefix='#', intents=intents)  # Yahan intents pass kar diye
+
 
 @bot.event
 async def on_ready():
@@ -93,6 +99,12 @@ async def on_ready():
     members = '\n - '.join([member.name for member in guild.members])
     print(f'Guild Members:\n - {members}')
 
+@bot.event
+async def on_ready():
+    print(f'Logged in as {bot.user}')
+
+TOKEN = os.getenv('DISCORD_BOT_TOKEN')  # Token env file se lo
+bot.run(TOKEN)
 
 bot.run(TOKEN)
 
