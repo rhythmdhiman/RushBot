@@ -1,0 +1,5 @@
+You can create your .env file using the fomat given below.
+CLIST_API={YOUR API}
+USERNAME={YOUR USERNAME>}
+DISCORD_GUILD={YOUR SERVER NAME}
+DISCORD_TOKEN={YOUR BOT TOKEN}
